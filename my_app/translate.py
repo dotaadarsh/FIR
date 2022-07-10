@@ -1,16 +1,16 @@
 # refer - https://developer.adobe.com/document-services/apis/pdf-services/ocr-pdf/#ocr-pdf-file
 
-# tamil_FIR = https://sisypheans.s3-ap-south-1.amazonaws.com/1caa1c38dfc3522834819566590b6487
-
 import streamlit as st
 import docx2txt
 import pdfplumber 
 import json
+import pandas as pd
 from googletrans import Translator
 translator = Translator()
 
 st.title('Text summarizer')
-docx_file = st.file_uploader("Choose a file")
+
+docx_file = st.file_uploader("Choose a file") 
 
 if docx_file is not None:
     
@@ -42,4 +42,7 @@ if docx_file is not None:
         st.text_area("Extracted Text", raw_text)
         translated_text = translator.translate(raw_text)
         print(translated_text.text)
-
+        
+with st.expander("Sample files"):
+    data = pd.read_csv('/workspace/pdf-parser/Sample-FIR.csv')
+    st.dataframe(data)
