@@ -8,7 +8,7 @@ import pandas as pd
 from googletrans import Translator
 translator = Translator()
 
-st.title('Text summarizer')
+st.title('Transliteration')
 
 docx_file = st.file_uploader("Choose a file") 
 
@@ -30,19 +30,22 @@ if docx_file is not None:
                 with pdfplumber.open(docx_file) as pdf:
                     pages = pdf.pages[0]
                     extract = pages.extract_text()
-                    st.text_area("Extracted Text", extract)
+                    with st.expander("Extracted Text", expanded=False):
+                        st.write(extract)
                     translated_text = translator.translate(extract)
-                    st.text_area("Translated text",translated_text.text)
+                    with st.expander("Translated text"):
+                        st.write("Translated text",translated_text.text)
 
             except:
                 st.write("None")
 
     else:   
         raw_text = docx2txt.process(docx_file)
-        st.text_area("Extracted Text", raw_text)
-        translated_text = translator.translate(raw_text)
-        print(translated_text.text)
+        with st.expander("Extracted Text", expanded=False):
+            st.text_area("Extracted Text", raw_text)
+            translated_text = translator.translate(raw_text)
+            print(translated_text.text)
         
 with st.expander("Sample files"):
-    data = pd.read_csv('/workspace/pdf-parser/Sample-FIR.csv')
+    data = pd.read_csv('/workspace/FIR/Sample-FIR.csv')
     st.dataframe(data)
