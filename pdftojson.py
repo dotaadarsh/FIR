@@ -3,7 +3,7 @@ import requests # pip install requests
 
 # The authentication key (API Key).
 # Get your own by registering at https://app.pdf.co
-API_KEY = "aadarshkannan111@gmail.com_03ca00d1bcdabb5be615b01f6e4227cd97701c9b385a605016074958de7fde6c5984d643"
+API_KEY = "#"
 
 # Base URL for PDF.co Web API requests
 BASE_URL = "https://api.pdf.co/v1"
