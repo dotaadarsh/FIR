@@ -1,5 +1,3 @@
-# refer - https://developer.adobe.com/document-services/apis/pdf-services/ocr-pdf/#ocr-pdf-file
-
 import streamlit as st
 import docx2txt
 import pdfplumber 
@@ -9,7 +7,8 @@ from googletrans import Translator
 translator = Translator()
 
 st.title('Transliteration')
-
+with st.sidebar:
+    st.text("Connect with me")
 docx_file = st.file_uploader("Choose a file") 
 
 if docx_file is not None:

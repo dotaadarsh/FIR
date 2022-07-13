@@ -3,13 +3,13 @@ import requests # pip install requests
 
 # The authentication key (API Key).
 # Get your own by registering at https://app.pdf.co
-API_KEY = "#"
+API_KEY = "aadarshkannan111@gmail.com_e699ecc7bf87bf27ebb01f181a646196545c7de0483446bb8ffbc017f8b4e40d8b9c135a"
 
 # Base URL for PDF.co Web API requests
 BASE_URL = "https://api.pdf.co/v1"
 
 # Source PDF file
-SourceFile = "/workspace/FIR/tamil_fir.pdf"
+SourceFile = "/workspace/FIR/text_pdf_sample_format.pdf"
 # Comma-separated list of page indices (or ranges) to process. Leave empty for all pages. Example: '0,2-5,7-'.
 Pages = ""
 # PDF document password. Leave empty for unprotected documents.
