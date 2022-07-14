@@ -52,5 +52,5 @@ if docx_file is not None:
         
 with st.expander("Sample files"):
     file_url = "https://github.com/dotaadarsh/FIR/blob/main/Sample-FIR.csv"
-    data = pd.read_csv(file_url)
+    data = pd.read_csv(file_url, on_bad_lines='skip')
     st.dataframe(data)
