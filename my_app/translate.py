@@ -51,5 +51,6 @@ if docx_file is not None:
             st.write(translated_text.text)
         
 with st.expander("Sample files"):
-    data = pd.read_csv('https://github.com/dotaadarsh/FIR/blob/main/Sample-FIR.csv')
+    file_url = "https://github.com/dotaadarsh/FIR/blob/main/Sample-FIR.csv"
+    data = pd.read_csv(file_url)
     st.dataframe(data)
